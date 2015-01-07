@@ -1,0 +1,359 @@
+.display-link-control {
+    display: inline-block;
+    padding-top: 9px;
+    text-decoration: underline;
+}
+
+.page-title {
+    margin-bottom: 40px;
+}
+
+.content-thin {
+  	max-width: 350px;
+  	margin: 0 auto;
+}
+.content-smart {
+  	max-width: 800px;
+  	margin: 0 auto;
+}
+.link-footer {
+    margin-top: 50px;
+}
+.btn-orange {
+    background-color: #f06e37;
+}
+
+.btn-orange:hover {
+    background-color: #e4652f;
+}
+.form-group ul {
+    padding-left: 0px;
+}
+.form-group li {
+    list-style: none;
+}
+
+.messages a {
+    color: #428bca;
+}
+
+.autocomplete-light-widget .deck > span[data-value] {
+    position: relative;
+    width: 100%;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    background-color: #FFF;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #dedede;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.autocomplete-light-widget .deck > span[data-value] .remove {
+    background-position-y: 3px;
+    height: 17px;
+}
+.autocomplete-light-widget .deck > span[data-value] .reference-span {
+    margin-left: 10px;
+}
+.form-group .autocomplete-light-widget {
+    display: block;
+}
+
+.form-group .autocomplete-light-widget input,
+.form-group .autocomplete-light-widget input:focus {
+    width: 100%;
+}
+
+.add-another-inline-input-list {
+
+    overflow: hidden;
+    margin-top: 20px;
+
+
+}
+
+.add-another-inline-input-list .form-group {
+    overflow: hidden;
+}
+
+.inline-reference-wrapper {
+    position: relative;
+}
+.inline-reference-container {
+    border: 1px solid #e5e5e5;
+    padding: 15px;
+}
+#inline_overlay {
+    background: url(../images/bg-paper.png);
+    opacity: 0.8;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    box-sizing: content-box;
+    border-radius: 5px;
+    border: solid 1px #DDD;
+}
+
+.form-horizontal .inline-reference-container .form-group {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.nav > li.disabled.nav-header > a {
+    font-family: "clear_sansbold",Helvetica Neue, Helvetica, Arial, sans-serif;
+    cursor: default;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.nav-stacked > li.nav-header:hover {
+    background-color: transparent;
+}
+
+.party-filter {
+    margin-bottom: 60px;
+    margin-top: 0px;
+    padding: 0;
+}
+.party-filter .party-dropdown {
+    left: 0;
+    right: auto;
+}
+
+/* Don't merge to styles */
+#id_permalink_readonly {
+    display: inline-block;
+    margin-right: -50px;
+    padding-right: 60px;
+}
+
+.popup-create-link-wrapper img {
+    width: auto;
+}
+#id_portfolios-autocomplete,
+#id_jobs-autocomplete,
+#id_experiences-autocomplete,
+#id_received_fundings-autocomplete,
+#id_gived_fundings-autocomplete,
+#id_received_investings-autocomplete,
+#id_gived_investings-autocomplete {
+    display: none !important;
+}
+
+.select-date-wrapper {
+    width: 33.33%;
+    padding-right: 15px;
+    float: left;
+}
+.field-type-date {
+    margin-right: -15px;
+}
+
+.tagit-hidden-field {
+    display: none !important;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #CCC !important;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: #CCC !important;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder{
+    color: #CCC !important;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder{
+    color: #CCC !important;
+}
+
+.field-group {
+    padding: 30px 30px 0 30px;
+    border: 1px solid #e8e8e8;
+    margin-bottom: 30px;
+    margin-top: -20px;
+}
+.field-group label {
+    font-size: 15px;
+}
+.form-group-label {
+    background-color: #FFF;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+
+.table-responsive {
+    min-height: .01%;
+    overflow-x: auto;
+}
+
+.table-responsive table {
+    margin-bottom: 0;
+}
+
+.full-profile dd ul.list li {
+    display: block;
+}
+
+#id_sector_activities, #id_productservice_type {
+    max-height: none;
+}
+
+.controls input.input-other {
+    width: auto;
+    float: left;
+    padding: 3px 6px;
+    height: 32px;
+}
+.data-field-wrapper {
+    overflow: hidden;
+}
+
+#carousel-portfolio .show-img,
+#carousel-portfolio .show-img img {
+    background-color: #FFF;
+}
+
+#carousel-portfolio .show-wrapper {
+    border: 1px solid #ccc;
+}
+
+
+
+/* mu;ti colum dropdown */
+.dropdown-menu {
+	min-width: 200px;
+}
+/*.dropdown-menu.columns-2 {
+	min-width: 400px;
+}*/
+
+/*.dropdown-menu.columns-3 {
+	min-width: 520px;
+}*/
+.dropdown-menu li a {
+	font-weight: 300;
+}
+/*.multi-column {
+    padding: 15px 10px;
+}*/
+/*.multi-column-dropdown {
+	list-style: none;
+    padding-left: 0;
+}
+.multi-column-dropdown li a {
+	display: block;
+	clear: both;
+	line-height: 1.428571429;
+	color: #333;
+	white-space: normal;
+}
+.multi-column-dropdown li a:hover {
+	text-decoration: none;
+	color: #262626;
+	background-color: #f5f5f5;
+}
+
+@media (max-width: 767px) {
+	.dropdown-menu.multi-column {
+		min-width: 240px !important;
+		overflow-x: hidden;
+	}
+}*/
+
+.nav-party-image {
+    height: 28px;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-party .label-grey {
+    display: inline-block;
+    line-height: 14px;
+    padding-top: 4px;
+}
+
+.children-indent {
+    margin-left: 22px;
+}
+.children-indent:before {
+    content: '⌞';
+    display: block;
+    float: left;
+    margin-top: 4px;
+}
+
+.children-indent label {
+    text-indent: -12px;
+    overflow: hidden;
+}
+
+.range-input-range-wrapper {
+    margin-right: -50px;
+    float: left;
+    width: 100%;
+}
+.range-input-range {
+    float: left;
+    width: 100%;
+    padding-right: 50px;
+}
+.range-input-item-left {
+    width: 50%;
+    float: left;
+    margin-right: -20px;
+}
+.range-input-item-left .range-input-item-inner {
+    padding-right: 20px;
+}
+.range-input-item-right {
+    width: 50%;
+    float: left;
+    margin-left: -20px;
+}
+.range-input-item-right .range-input-item-inner {
+    padding-left: 20px;
+}
+.range-input-dash {
+    float: left;
+    padding: 10px;
+}
+.range-input-unit {
+    float: right;
+    padding-top: 10px;
+}
+
+.form-group ul.tagit {
+    width: 100%;
+    font-size: 15px;
+}
+
+.tagit-new input {
+    height: inherit;
+}
+
+.block-happening .happening-show {
+    display: inline !important;
+}
+
+strong.pending {
+    color: #999999;
+}
