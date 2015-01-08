@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.core.exceptions import PermissionDenied
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
@@ -56,6 +57,10 @@ def keyvela_create(request, instance=None):
             initial['user_leave'] = instance.user_leave
 
         form = KeyVelaForm(instance, ModelClass, initial=initial)
+
+        if instance.id:
+            form.fields['user_leave'].widget.attrs['disabled'] = True
+
     return render(request, 'keyvela/form.html', {'form': form})
 
 def keyvela_detail(request, keyvela_id):
@@ -66,7 +71,7 @@ def keyvela_detail(request, keyvela_id):
 def keyvela_edit(request, keyvela_id=None):
 
     keyvela = get_object_or_404(KeyVela, id=keyvela_id)
-
-
-
-    return keyvela_create(request, keyvela)
+    if keyvela.user_leave.id == request.user.id:
+        return keyvela_create(request, keyvela)
+    else:
+        raise PermissionDenied()

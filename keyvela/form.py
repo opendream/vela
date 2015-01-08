@@ -9,7 +9,7 @@ class KeyVelaForm(CommonForm):
     class Meta:
         model = KeyVela
     user_leave = forms.ModelChoiceField(required=True, queryset=User.objects.all())
-    user_leave.widget.attrs['disabled'] = True
+    #user_leave.widget.attrs['disabled'] = True
     category = forms.ChoiceField(choices=KeyVela.LEAVE_TYPE_CHOICES)
     time = forms.DecimalField()
     description = forms.CharField(required=False, widget=CKEditorWidget(config_name='minimal'))
