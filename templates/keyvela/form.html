@@ -1,0 +1,120 @@
+{% extends 'base_single.html' %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title %}
+{% trans "Add Leave"%}
+{% endblock %}
+
+{% block js %}
+{{ form.media.js }}
+<script type="text/javascript" src="{% static 'libs/prettycheckable/js/prettycheckable.js' %}"></script>
+{% endblock %}
+{% block css %}
+{{ form.media.css }}
+<link href="{% static 'libs/prettycheckable/css/prettycheckable.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+{% block content_class %} content-smart{% endblock %}
+
+
+{% block breadcrumb %}
+<li class="active">{% trans "Add Leave" %}</li>
+{% endblock %}
+
+
+{% block content %}
+
+<form method="post" class="form-horizontal" role="form" enctype="multipart/form-data" ng-non-bindable>
+    {% csrf_token %}
+
+    {% if form.non_field_errors %}
+    <div class="errors alert alert-danger">{{ form.non_field_errors }}</div>
+    {% endif %}
+    <div class="controls form-group">
+        <label for="id_user_leave" class="field-container control-label col-sm-3">{% trans "User" %} *</label>
+        <div class="field-container col-sm-7">
+            {{ form.user_leave}}
+            <span class="help-block">
+            {{ form.user_leave.help_text }}
+            </span>
+            {% if form.user_leave.errors %}
+            <div class="errors alert alert-danger">{{ form.user_leave.errors }}</div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="controls form-group">
+        <label for="id_category" class="field-container control-label col-sm-3">{% trans "Category" %} *</label>
+        <div class="field-container col-sm-7">
+            {{ form.category}}
+            <span class="help-block">
+            {{ form.category.help_text }}
+            </span>
+            {% if form.category.errors %}
+            <div class="errors alert alert-danger">{{ form.category.errors }}</div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="controls form-group">
+        <label for="id_time" class="field-container control-label col-sm-3">{% trans "Time" %} *</label>
+        <div class="field-container col-sm-7">
+            {{ form.time}}
+            <span class="help-block">
+            {{ form.time.help_text }}
+            </span>
+            {% if form.time.errors %}
+            <div class="errors alert alert-danger">{{ form.time.errors }}</div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="controls form-group">
+        <label for="id_description" class="field-container control-label col-sm-3">{% trans "Description" %} </label>
+        <div class="field-container col-sm-7">
+            {{ form.description}}
+            <span class="help-block">
+            {{ form.description.help_text }}
+            </span>
+            {% if form.description.errors %}
+            <div class="errors alert alert-danger">{{ form.description.errors }}</div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="controls form-group">
+        <label for="id_loss_message" class="field-container control-label col-sm-3">{% trans "Loss Message" %} </label>
+        <div class="field-container col-sm-7">
+            {{ form.loss_message}}
+            <span class="help-block">
+            {{ form.loss_message.help_text }}
+            </span>
+            {% if form.loss_message.errors %}
+            <div class="errors alert alert-danger">{{ form.loss_message.errors }}</div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="controls form-group">
+        <div class="col-sm-offset-3 col-sm-7 form-action">
+            <button class="btn btn-primary btn-orange" type="submit">{% trans "Enter" %}</button>
+            <a href="{% url 'home' %}" class="btn btn-default btn-cancel">{% trans "Cancel" %}</a>
+        </div>
+
+        {% if not form.is_new %}
+        <a class="btn btn-md btn-delete" href="{% url 'presentation_delete' 'cms' 'News' form.inst.id %}">
+            <span class="glyphicon glyphicon-remove"></span>
+            {% trans "Delete" %}
+        </a>
+        {% endif %}
+
+    </div>
+
+
+</form>
+
+<script type="text/javascript">
+    {% if form.is_new %}
+    generatePermalink($('input[name=title]'));
+    {% endif %}
+    controlPermalink()
+    preventScrollReload()
+</script>
+    {% endblock %}

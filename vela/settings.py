@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     # Project
     'common',
     'account',
+    'keyvela',
 
 )
 
