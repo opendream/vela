@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.core.exceptions import PermissionDenied
 from django.shortcuts import render, redirect
+from django.core.mail import send_mail
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from django.shortcuts import get_object_or_404, render, redirect
@@ -41,6 +42,11 @@ def keyvela_create(request, instance=None):
 
             message_success = get_success_message(instance, is_new, [])
             messages.success(request, message_success)
+            # Send email
+            print instance.user_leave
+            email_subject = str(instance.user_leave) + " is " + str(instance.category) + " " + str(instance.time) +  " Hr"
+            email_description = instance.description
+            send_mail(email_subject, email_description, 'info@opendream.co.th',['all@opendream.co.th'], fail_silently=False)
             return redirect('keyvela_edit', instance.id)
         else:
             messages.error(request, 'Your submission error. Please, check in error fields.')
@@ -65,8 +71,10 @@ def keyvela_create(request, instance=None):
 
 def keyvela_detail(request, keyvela_id):
     # Todo redirect if no keyvela_id
+    keyvela = KeyVela.objects.get(id=keyvela_id)
     return render(request, 'keyvela/detail.html',{
         'keyvela_id': keyvela_id,
+        'keyvela': keyvela
     })
 def keyvela_edit(request, keyvela_id=None):
 
@@ -74,4 +82,5 @@ def keyvela_edit(request, keyvela_id=None):
     if keyvela.user_leave.id == request.user.id:
         return keyvela_create(request, keyvela)
     else:
-        raise PermissionDenied()
+        #raise PermissionDenied()
+        return keyvela_create(request, keyvela)

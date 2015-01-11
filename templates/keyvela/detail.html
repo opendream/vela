@@ -1,1 +1,27 @@
-gggggggg
+{% extends 'base_single.html' %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title %}
+{{ keyvela.user_leave.get_display_name }}
+{% endblock %}
+
+{% block js %}
+{{ form.media.js }}
+<script type="text/javascript" src="{% static 'libs/prettycheckable/js/prettycheckable.js' %}"></script>
+{% endblock %}
+{% block css %}
+{{ form.media.css }}
+<link href="{% static 'libs/prettycheckable/css/prettycheckable.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+{% block content_class %} content-smart{% endblock %}
+
+
+{% block breadcrumb %}
+{% endblock %}
+
+{% block content %}
+    <div class="time">Time: {{ keyvela.time }} Hr.</div>
+
+{% endblock %}
